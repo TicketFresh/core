@@ -1,0 +1,37 @@
+version: '3.7'
+
+networks:
+  app-tier:
+    driver: bridge
+
+services: 
+  main:
+    build: .
+    ports:
+    - "5000:5000"
+        
+    networks:
+      - app-tier
+  
+  mongodb:
+    build: ./database
+    user: root
+    ports:
+      - "27017:27017"
+    volumes:
+      - /database:/bitnami
+        
+    networks:
+      - app-tier
+    environment:
+      - MONGODB_USERNAME=my_user
+      - MONGODB_PASSWORD=password123
+      - MONGODB_DATABASE=ticketfresh  
+  
+  nginx:
+    build: ./nginx
+    ports:
+    - "80:80"
+        
+    networks:
+      - app-tier
