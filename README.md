@@ -1,4 +1,4 @@
 # TicketFresh
 
-Visit ticketfresh.github.io for all documentation
+Visit https://ticketfresh.gitbook.io/documentation/ for all documentation
 
