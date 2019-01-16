@@ -2,7 +2,7 @@ from flask import *
 from functools import wraps
 import logging
 # from classes import *
-from test_content import *
+from utilities.test_content import *
 
 DEBUG = True #FIXME Please remove
 
