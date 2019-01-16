@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3'
 
 networks:
   app-tier:
@@ -6,15 +6,17 @@ networks:
 
 services: 
   main:
-    build: .
-    ports:
+    build: 
+      context: .
+      dockerfile: ./services/application/Dockerfile
+    ports:  
     - "5000:5000"
         
     networks:
       - app-tier
   
   mongodb:
-    build: ./database
+    build: ./services/database
     user: root
     ports:
       - "27017:27017"
@@ -29,7 +31,7 @@ services:
       - MONGODB_DATABASE=ticketfresh  
   
   nginx:
-    build: ./nginx
+    build: ./services/nginx
     ports:
     - "80:80"
         
