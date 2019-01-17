@@ -1,8 +1,9 @@
 version: '3'
 
 networks:
-  app-tier:
-    driver: bridge
+  app-tier: # Main bridge network for application, NGINX & DB
+    driver: overlay
+    
 
 services: 
   main:
@@ -11,7 +12,16 @@ services:
       dockerfile: ./services/application/Dockerfile
     ports:  
     - "5000:5000"
-        
+
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+
     networks:
       - app-tier
   
