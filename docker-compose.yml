@@ -2,7 +2,7 @@ version: '3'
 
 networks:
   app-tier: # Main bridge network for application, NGINX & DB
-    driver: overlay
+    driver: bridge
     
 
 services: 
@@ -31,7 +31,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - /database:/bitnami
+      - ./database:/bitnami
         
     networks:
       - app-tier

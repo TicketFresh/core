@@ -1,4 +1,4 @@
-FROM python:3.4
+FROM python:latest
 
 # Copy necessary app files
 ADD static /ticketfresh/static
