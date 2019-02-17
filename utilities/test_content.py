@@ -1,4 +1,4 @@
-from classes import *
+from utilities.classes import *
 import random
 import uuid
 import argparse
