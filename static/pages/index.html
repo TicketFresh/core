@@ -1,7 +1,11 @@
 {% extends "template.html" %}
 
-<h1> Welcome to the homepage of {{ company.name }}</h1>
-
 {% block content %}
-
+    <h1>Hello {{ user.first_name }} {{ user.last_name }},</h1><br>
+    <h3>Welcome to TicketFresh</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id porta sapien, eu efficitur nulla. Etiam ut sagittis justo. Morbi eu aliquet tellus. Maecenas sed vestibulum neque. Praesent fringilla, diam mattis pellentesque pellentesque,
+        erat magna lacinia arcu, sit amet lobortis arcu felis vel velit. Aenean sed commodo risus. Vestibulum erat dolor, euismod quis tincidunt at, consectetur a nulla.Sed ultricies quis libero quis pretium. Quisque id pulvinar mauris.
+        Donec ut semper nisi. Praesent pellentesque nulla in sem rutrum placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi vel tellus eros. Nullam efficitur lacus ut maximus
+        faucibus. Praesent rhoncus, sem vel rhoncus consectetur, neque elit porta metus, sit amet imperdiet enim eros vel nibh.</p>
+    <br>
 {% endblock %}
