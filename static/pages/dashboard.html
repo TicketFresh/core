@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+
+    {% block title %} Dashboard {% endblock %}
+
+    {% block content %}
+        
+                    <div class="col" id="body_content" style="background-color: #f0f0f0;">
+                        <h1>Welcome {{ user.first_name }} {{user.last_name }},</h1>
+                        <div class="card">
+                            <div class="card-body" id="replace-with-nice-graph">
+                                <h4 class="card-title">This would be where a nice graph appears.</h4>
+                                <h6 class="text-muted card-subtitle mb-2">Imagine a fancy graph.</h6>
+                                <p class="card-text">The graph says how you did. Where you a good boi? did you do your work? if not this graph will snitch on you. Do better next time Carol, jesus we shouldn't all have to pick up the slack for you.</p>
+                            </div>
+                        </div>
+                    </div>
+    {% endblock %}
