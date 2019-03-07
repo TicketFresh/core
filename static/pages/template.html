@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html style="background-color: #f0f0f0;">
 
 <head>
     <title>TicketFresh</title>
     <meta charset="utf-8">
-
-    <!--Manifest Heading information (Commented out for time being while working on other things)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <!-- 
+    <!--Manifest & Metadata Heading information-->
     <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,75 +16,85 @@
     <meta name="msapplication-navbutton-color" content="#141414">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="msapplication-starturl" content="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="72x72" href="{{ url_for('static', filename='img/icons/icon-72x72.png') }}">
+    <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="{{ url_for('static', filename='img/icons/icon-72x72.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='img/icons/icon-96x96.png') }}">
+    <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='img/icons/icon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="128x128" href="{{ url_for('static', filename='img/icons/icon-128x128.png') }}">
+    <link rel="apple-touch-icon" type="image/png" sizes="128x128" href="{{ url_for('static', filename='img/icons/icon-128x128.png') }}">
+    <link rel="icon" type="image/png" sizes="144x144" href="{{ url_for('static', filename='img/icons/icon-144x144.png') }}">
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="{{ url_for('static', filename='img/icons/icon-144x144.png') }}">
+    <link rel="icon" type="image/png" sizes="152x152" href="{{ url_for('static', filename='img/icons/icon-152x152.png') }}">
+    <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="{{ url_for('static', filename='img/icons/icon-152x152.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='img/icons/icon-192x192.png') }}">
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='img/icons/icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="384x384" href="{{ url_for('static', filename='img/icons/icon-384x384.png') }}">
+    <link rel="apple-touch-icon" type="image/png" sizes="384x384" href="{{ url_for('static', filename='img/icons/icon-384x384.png') }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='img/icons/icon-512x512.png') }}">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='img/icons/icon-512x512.png') }}"> 
     
-    <link rel="icon" type="image/png" sizes="72x72" href="{{ url_for('static', filename='images/icons/icon-72x72.png') }}">
-    <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="{{ url_for('static', filename='images/icons/icon-72x72.png') }}">
-
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='images/icons/icon-96x96.png') }}">
-    <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='images/icons/icon-96x96.png') }}">
-
-    <link rel="icon" type="image/png" sizes="128x128" href="{{ url_for('static', filename='images/icons/icon-128x128.png') }}">
-    <link rel="apple-touch-icon" type="image/png" sizes="128x128" href="{{ url_for('static', filename='images/icons/icon-128x128.png') }}">
-
-    <link rel="icon" type="image/png" sizes="144x144" href="{{ url_for('static', filename='images/icons/icon-144x144.png') }}">
-    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="{{ url_for('static', filename='images/icons/icon-144x144.png') }}">
+    <!--Share Settings-->
+    <meta name="twitter:title" content="TicketFresh">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/static/img/Ticket%20Fresh%20OG.png">
+    <meta name="twitter:image" content="/static/img/Ticket%20Fresh%20OG.png">
     
-    <link rel="icon" type="image/png" sizes="152x152" href="{{ url_for('static', filename='images/icons/icon-152x152.png') }}">
-    <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="{{ url_for('static', filename='images/icons/icon-152x152.png') }}">
-
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='images/icons/icon-192x192.png') }}">
-    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='images/icons/icon-192x192.png') }}">
-
-    <link rel="icon" type="image/png" sizes="384x384" href="{{ url_for('static', filename='images/icons/icon-384x384.png') }}">
-    <link rel="apple-touch-icon" type="image/png" sizes="384x384" href="{{ url_for('static', filename='images/icons/icon-384x384.png') }}">
-
-    <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='images/icons/icon-512x512.png') }}">
-    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='images/icons/icon-512x512.png') }}"> 
-    -->
-
-    
-    <!-- CSS Sheets-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Navigation-with-Button.css') }}">
+    <!--CSS Sheets-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Sidebar-Menu-1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Sidebar-Menu.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     
-    <!--JavaScript Script(s) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     
+    <!-- Service worker registering (Commented out for time being while working on other things)
     
-    <!-- Service worker registering (Commented out for time being while working on other things)-->
-    <!--
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
-    -->
-    
-</head>
+    <script src="{{ url_for('static', filename='app.js') }}"></script> -->
+    </head>
 
-<body style="background-color: #f0f0f0;">
-    <div>
-        <nav class="navbar navbar-dark navbar-expand-md bg-dark navigation-clean-button">
-            <div class="container"><a class="navbar-brand text-light" href="/">{{ company.name }}</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div
-                    class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="nav navbar-nav mr-auto">
-                        <li class="nav-item text-light" role="presentation"><a class="nav-link text-light" href="/dashboard">Dashboard</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link text-light" href="/settings">Site Settings</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link text-light" href="//ticketfresh.gitbook.io" target="_blank">Help/Documentation</a></li>
-                        <li class="dropdown nav-item"><a class="dropdown-toggle nav-link text-light" data-toggle="dropdown" aria-expanded="false" href="/search">Search</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="/customers">Customers</a><a class="dropdown-item" role="presentation" href="/companies">Companies</a><a class="dropdown-item" role="presentation" href="/tickets">Tickets and Invoices</a></div>
-                        </li>
-                    </ul><span class="navbar-text actions"> <div class="btn-group border rounded border-dark"><button class="btn btn-light" type="button">{{ user.first_name }} {{ user.last_name }}<br></button><button class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false" type="button"></button><div class="dropdown-menu text-capitalize" role="menu"><a class="dropdown-item" role="presentation" href="/account">Account Settings</a><a class="dropdown-item" role="presentation" href="/users">User Management</a><a class="dropdown-item" role="presentation" href="/tickets/user=?">My Tickets</a><a class="dropdown-item" role="presentation" href="/Logout">{{ user.status }}</a></div></div></span></div>
+
+    
+    
+    <!-- Sidebar Navigation -->
+    <body style="background-color: #141414;color: #141414;">
+        <div id="wrapper">
+            <div id="sidebar-wrapper" style="background-color: #f0f0f0;color: #f0f0f0;">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand"> <a class="text-dark" href="/">{{ company.name }}</a></li>
+                    <li> <a class="text-dark" href="#">{{ user.status }}</a><a class="text-dark" href="/dashboard">Dashboard </a></li>
+                    <li> <a class="text-dark" href="/tickets/all">Tickets</a></li>
+                    <li> <a class="text-dark" href="/settings">Account Settings</a><a class="text-dark" href="//ticketfresh.gitbook.io" target="_blank">Help/Documentation</a><a class="text-dark" href="#">Search</a></li>
+                </ul>
             </div>
-        </nav>
+            <div class="page-content-wrapper">
+                <div class="container-fluid"><a class="btn btn-link" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" style="color: #f0f0f0;"></i></a>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <hgroup>
+                                <h1><a class="text-light" href="/">TicketFresh</a></h1>
+                                <h3 class="text-light" style="padding: 8px;">{{ user.first_name }} {{user.last_name }} | {% block title %} {% endblock %}<br></h3>
+                            </hgroup>
+                        </div>
+                    
+    <!-- Page Content-->
+
+    <div class="col" id="body_content" style="background-color: #f0f0f0;">
+        {% block content %}
+        {% endblock %}
+    </div>
+                    
+                </div>
+            </div>
+        </div>
     </div>
 
-
-    
-{% block content %}
-
+    <!--JavaScript Script(s) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/Sidebar-Menu.js') }}"></script>
+        
 </body>
-{% endblock %}
-
 </html>

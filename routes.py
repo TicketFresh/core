@@ -10,9 +10,9 @@ app = Flask(__name__, template_folder='static/pages')
 
 #Passing test data as arguments to Home
 @app.route('/')
-def home(company = test_company, user = test_user_logged_out, buttonlabel = "Login"):
+def home(company = test_company, user = test_user_logged_in, buttonlabel = "Login", ticket = test_ticket):
     """Routing for site homepage"""
-    return render_template('index.html', company = test_company, user = test_user_logged_out, buttonlabel = "Login")
+    return render_template('index.html', company = test_company, user = test_user_logged_in, buttonlabel = "Login", ticket = test_ticket)
 
 
 #Passing test data as arguments to dashboard
@@ -20,19 +20,6 @@ def home(company = test_company, user = test_user_logged_out, buttonlabel = "Log
 def dashboard(company = test_company, user = test_user_logged_in, ticket = test_ticket, buttonlabel = "Login"):
     """Routing for site homepage"""
     return render_template('dashboard.html', company = test_company, user = test_user_logged_in, ticket = test_ticket, buttonlabel = "Login")
-
-#Passing test data as arguments to companies_search
-@app.route('/companies')
-def companies_search(company = test_company, user = test_user_logged_in, buttonlabel = "Login"):
-    """Routing for site homepage"""
-    return render_template('companies-search.html', company = test_company, user = test_user_logged_in, buttonlabel = "Login")
-
-#Passing test data as arguments to customers_search
-@app.route('/customers')
-def customer_search(company = test_company, user = test_user_logged_in):
-    """Routing for site homepage"""
-    return render_template('customers-search.html', company = test_company, user = test_user_logged_in, buttonlabel = "{} {}".format(test_user_logged_in.first_name, test_user_logged_in.last_name))
-
 
 #Passing test data as arguments to settings
 @app.route('/settings')
@@ -42,21 +29,35 @@ def settings(company = test_company, user = test_user_logged_in):
 
 
 #Passing test data as arguments to ticket_search
-@app.route('/tickets')
-def tickets_search(company = test_company, user = test_user_logged_in, buttonlabel = "Login"):
+@app.route('/tickets/all')
+def tickets_search(company = test_company, user = test_user_logged_in, buttonlabel = "Login", ticket = test_ticket):
     """Routing for site homepage"""
-    return render_template('tickets-search.html', company = test_company, user = test_user_logged_in, buttonlabel = "Login")
+    return render_template('tickets_all.html', company = test_company, user = test_user_logged_in, buttonlabel = "Login", ticket = test_ticket)
 
-#Passing test data as arguments to companies_search
-@app.route('/search')
-def search(company = test_company, user = test_user_logged_in, buttonlabel = "Login"):
-    """Routing for site homepage"""
-    return render_template('search.html', company = test_company, user = test_user_logged_in, buttonlabel = "Login")
 
 
 @app.route('/robots.txt')
 def robots_txt():
     return app.send_static_file('robots.txt')
+
+#TODO
+@app.route('/search')
+def search(company = test_company, user = test_user_logged_in, buttonlabel = "Login"):
+    """Routing for site homepage"""
+    return render_template('search.html', company = test_company, user = test_user_logged_in, buttonlabel = "Login" )
+
+#TODO
+@app.route('/companies')
+def companies_search(company = test_company, user = test_user_logged_in, buttonlabel = "Login"):
+    """Routing for site homepage"""
+    return render_template('companies-search.html', company = test_company, user = test_user_logged_in, buttonlabel = "Login")
+
+#TODO
+@app.route('/customers')
+def customer_search(company = test_company, user = test_user_logged_in):
+    """Routing for site homepage"""
+    return render_template('customers-search.html', company = test_company, user = test_user_logged_in, buttonlabel = "{} {}".format(test_user_logged_in.first_name, test_user_logged_in.last_name))
+
 
 #Removing SW pages for now
 # @app.route('/offline.html')

@@ -1,0 +1,50 @@
+{% extends "template.html" %}
+
+{% block title %} Tickets {% endblock %}
+
+{% block content %}
+
+
+<div id="ticket_row_div">
+    <div class="col-md-12" id="ticket_row" style="background-color: #f0f0f0;padding-left: 0px;padding-right: 0px;">
+        <div class="card-group text-center">
+            
+            <a href="https://kieranwood.ca" class="card border rounded shadow-sm" style="margin: 8px;color: #141414;text-decoration: none;">
+                <div class="card-body shadow">
+                    <h4 class="card-title">{{ ticket.id  }} | {{ ticket.name }}</h4>
+                    <div class="alert alert-info" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
+                    <h6> {{ ticket.customer.first_name }} {{ ticket.customer.last_name }}</h6>
+                    <p class="card-text">{{ ticket.description }}</p>
+                </div>
+            </a>
+            
+            
+            <a href="https://kieranwood.ca" class="card border rounded shadow-sm" style="margin: 8px;color: #141414;text-decoration: none;">
+                <div class="card-body shadow">
+                    <h4 class="card-title">{{ ticket.id  }} | {{ ticket.name }}</h4>
+                    <div class="alert alert-info" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
+                    <h6> {{ ticket.customer.first_name }} {{ ticket.customer.last_name }}</h6>
+                    <p class="card-text">{{ ticket.description }}</p>
+                </div>
+            </a>
+            
+            <a href="https://kieranwood.ca" class="card border rounded shadow-sm" style="margin: 8px;color: #141414;text-decoration: none;">
+                <div class="card-body shadow">
+                    <h4 class="card-title">{{ ticket.id  }} | {{ ticket.name }}</h4>
+                    <div class="alert alert-info" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
+                    <h6> {{ ticket.customer.first_name }} {{ ticket.customer.last_name }}</h6>
+                    <p class="card-text">{{ ticket.description }}</p>
+                </div>
+            </a>
+
+<!-- <a href="https://kieranwood.ca" class="card border rounded shadow-sm" style="margin: 8px;color: #141414;text-decoration: none;">
+                <div class="card-body shadow">
+                    <h4 class="card-title">{{ ticket.id  }} | {{ ticket.name }}</h4>
+                    <div class="alert alert-info" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
+                    <p><a class="customer-link" href="{{ ticket.customer.link }}"> {{ ticket.customer.name }} a </a></p>
+                    <p class="card-text">{{ ticket.description }}</p>
+                </div>
+            </a> -->
+
+
+{% endblock %}

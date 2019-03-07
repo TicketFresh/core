@@ -1,8 +1,11 @@
 {% extends "template.html" %}
 
-
+{% block title %} Settings {% endblock %}
 
 {% block content %}
 
-<h1> Settings for {{ company.name }} Installation of TicketFresh</h1>
+<h1 class="text-left" style="margin-top: 5px;">User Settings</h1>
+<form>
+    <div class="form-group"><label for="user_description">Description</label><textarea class="form-control form-control-lg" name="user_description" placeholder="Tell us a bit about yourself">user_description</textarea></div>
+</form>
 {% endblock %}
