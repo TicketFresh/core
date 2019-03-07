@@ -34,20 +34,31 @@ def random_company():
     "Apple","American Eagle","Bootlegger","Walmart","Helly Hansen","University of Calgary","Bob's Burgers","Microsoft","North Face","Samsung","Sandisk","Intel","AMD","ASUS", "Gigabyte"]
     return random.choice(companies)
 
+def random_link():
+    """Temporary function for generating a random link for users and customers"""
+    links = ["https://google.ca","https://kieranwood.ca","https://youtube.ca","https://no-bs-repairs.com","//web.dev"]
+    return random.choice(links)
+
+
+
 def generate_user(mode="cli"):
-    return user(random_first_name(), random_last_name(), "Randomly Generated")
+    return user(random_first_name(), random_last_name(), "Login: RandGen",random_link())
 
-
-def generate_ticket(mode="cli"):
-    return ticket(lorem.sentence(), random_full_name(), random_company(), lorem.sentence(), "Randomly Generated")
+def generate_customer(mode="cli"):
+    return customer(random_first_name(), random_last_name(), "Randomly Generated",random_link(), "laptop")
 
 
 # Static classes for temporary testing
 test_user_logged_in = generate_user()
-test_user_logged_out = user("Login", "", "")
+test_user_logged_out = user("Login", "", "", "#")
 test_company = company(random_company())
-test_ticket = generate_ticket()
+
+test_customer = generate_customer()
 ###############################################################
+
+def generate_ticket(mode="cli"):
+    return ticket(lorem.sentence(), test_customer, random_company(), 'This would be the status', "Randomly Generated", "Description: "+lorem.sentence() )
+test_ticket = generate_ticket()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Create random information to test with")
@@ -67,4 +78,4 @@ if __name__ == "__main__":
         print(args.random_ticket)
 
 
-    
+    customer("Kieran", "Wood", "Generated from customer","https://google.ca", "Laptop")

@@ -3,11 +3,12 @@ import datetime
 
 
 class user:
-    def __init__(self, first_name, last_name, status):
+    def __init__(self, first_name, last_name, status, link):
         #TODO: add phone number, address company etc.
         self.first_name = first_name
         self.last_name = last_name
         self.status = status
+        self.link = link
 
     def __str__(self):
         values = "\nFirst Name: {} \nLast Name: {} \nStatus: {}".format(self.first_name, self.last_name, self.status)
@@ -24,20 +25,20 @@ class company:
 
 
 class ticket:
-    def __init__(self, title, client_name, company_name, last_update, status):
+    def __init__(self, title, customer, company_name, last_update, status, description):
         #TODO: Add more things
         self.id = uuid.uuid4()
         self.title = title
-        self.client_name = client_name
+        self.customer = customer
         self.company_name = company_name
         self.last_update = last_update
         self.status = status
+        self.description = description
     
     def __str__(self):
         values = "\nID: {} \nTitle: {} \nClient Name: {} \nCompany Name: {} \nLast Update: {} \nStatus: {}".format(
             self.id,
             self.title,
-            self.client_name,
             self.company_name,
             self.last_update,
             self.status
@@ -48,7 +49,6 @@ class ticket:
         values = "\nID: {} \nTitle: {} \nClient Name: {} \nCompany Name: {} \nLast Update: {} \nStatus: {}".format(
             self.id,
             self.title,
-            self.client_name,
             self.company_name,
             self.last_update,
             self.status
@@ -59,8 +59,9 @@ class inventory_item:
     def __init__(self):
         pass
 
-class customer:
-    def __init__(self):
+class customer(user):
+    def __init__(self, first_name, last_name, status, asset, link):
+        super().__init__(first_name, last_name, status, link)
         self.asset = asset
         pass
 
@@ -71,3 +72,4 @@ class invoice:
 class message:
     def __init__(self):
         pass
+    
