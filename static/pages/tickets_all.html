@@ -1,6 +1,6 @@
 {% extends "template.html" %}
 
-
+{% block title %} Tickets {% endblock %}
 
 {% block content %}
 
@@ -8,108 +8,52 @@
 <div id="ticket_row_div">
     <div class="col-md-12" id="ticket_row" style="background-color: #f0f0f0;padding-left: 0px;padding-right: 0px;">
         <div class="card-group text-center">
-            <div class="card border rounded shadow-sm" style="margin-top: 4px;margin-bottom: 4px;margin-right: 3px;margin-left: 3px;">
+            <div class="card border rounded shadow-sm" style="margin: 8px;">
                 <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}</h4>
+                    <h4 class="card-title">{{ ticket.id  }} | {{ ticket.name }}</h4>
                     <div class="alert alert-info" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
                     <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
                 </div>
             </div>
-            <div class="card border rounded shadow-sm" style="margin-bottom: 4px;margin-top: 4px;margin-right: 3px;margin-left: 3px;">
+            <div class="card border rounded shadow-sm" style="margin: 8px;">
                 <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}<br></h4>
+                    <h4 class="card-title">{{ ticket.id  }} | {{ ticket.name }}<br></h4>
                     <div class="alert alert-info" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
                     <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
                 </div>
             </div>
-            <div class="card border rounded shadow-sm" style="margin-top: 4px;margin-bottom: 4px;margin-left: 3px;margin-right: 3px;">
+            <div class="card border rounded shadow-sm" style="margin: 8px;">
                 <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}<br></h4>
+                    <h4 class="card-title">{{ ticket.id  }} | {{ ticket.name }}<br></h4>
+                    <div class="alert alert-info" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
+                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-group text-center">
+            <div class="card border rounded shadow-sm" style="margin: 8px;">
+                <div class="card-body shadow">
+                    <h4 class="card-title">{{ ticket.id  }} | {{ ticket.name }}</h4>
+                    <div class="alert alert-info" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
+                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                </div>
+            </div>
+            <div class="card border rounded shadow-sm" style="margin: 8px;">
+                <div class="card-body shadow">
+                    <h4 class="card-title">{{ ticket.id  }} | {{ ticket.name }}<br></h4>
+                    <div class="alert alert-info" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
+                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                </div>
+            </div>
+            <div class="card border rounded shadow-sm" style="margin: 8px;">
+                <div class="card-body shadow">
+                    <h4 class="card-title">{{ ticket.id  }} | {{ ticket.name }}<br></h4>
                     <div class="alert alert-info" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
                     <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-12" id="ticket_row" style="background-color: #f0f0f0;padding-left: 0px;padding-right: 0px;">
-        <div class="card-group text-center">
-            <div class="card border rounded shadow-sm" style="margin-top: 4px;margin-bottom: 4px;margin-right: 3px;margin-left: 3px;">
-                <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}</h4>
-                    <div class="alert alert-warning" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </div>
-            <div class="card border rounded shadow-sm" style="margin-bottom: 4px;margin-top: 4px;margin-right: 3px;margin-left: 3px;">
-                <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}<br></h4>
-                    <div class="alert alert-warning" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </div>
-            <div class="card border rounded shadow-sm" style="margin-top: 4px;margin-bottom: 4px;margin-left: 3px;margin-right: 3px;">
-                <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}<br></h4>
-                    <div class="alert alert-warning" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12" id="ticket_row" style="background-color: #f0f0f0;padding-left: 0px;padding-right: 0px;">
-        <div class="card-group text-center">
-            <div class="card border rounded shadow-sm" style="margin-top: 4px;margin-bottom: 4px;margin-right: 3px;margin-left: 3px;">
-                <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}</h4>
-                    <div class="alert alert-success" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </div>
-            <div class="card border rounded shadow-sm" style="margin-bottom: 4px;margin-top: 4px;margin-right: 3px;margin-left: 3px;">
-                <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}<br></h4>
-                    <div class="alert alert-success" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </div>
-            <div class="card border rounded shadow-sm" style="margin-top: 4px;margin-bottom: 4px;margin-left: 3px;margin-right: 3px;">
-                <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}<br></h4>
-                    <div class="alert alert-success" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12" id="ticket_row" style="background-color: #f0f0f0;padding-left: 0px;padding-right: 0px;">
-        <div class="card-group text-center">
-            <div class="card border rounded shadow-sm" style="margin-top: 4px;margin-bottom: 4px;margin-right: 3px;margin-left: 3px;">
-                <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}</h4>
-                    <div class="alert alert-danger" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </div>
-            <div class="card border rounded shadow-sm" style="margin-bottom: 4px;margin-top: 4px;margin-right: 3px;margin-left: 3px;">
-                <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}<br></h4>
-                    <div class="alert alert-danger" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </div>
-            <div class="card border rounded shadow-sm" style="margin-top: 4px;margin-bottom: 4px;margin-left: 3px;margin-right: 3px;">
-                <div class="card-body shadow">
-                    <h4 class="card-title">{{ ticket.id }} | {{ ticket.title }}<br></h4>
-                    <div class="alert alert-danger" role="alert" style="padding-top: 4px;padding-bottom: 4px;padding-right: 15px;padding-left: 15px;"><span style="padding: 0;"><strong>{{ ticket.status }}</strong></span></div>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
 </div>
 
 
